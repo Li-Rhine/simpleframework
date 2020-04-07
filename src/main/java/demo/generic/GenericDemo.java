@@ -28,5 +28,12 @@ public class GenericDemo {
         System.out.println(stringExample.getClass());
         System.out.println(integerExample.getClass());
         handleMember(integerExample);
+
+        Integer[] integers = {1, 2, 3, 4,5, 6};
+        Double[] doubles = {1.1, 1.2, 1.3, 1.4, 1.5};
+        Character[] characters = {'A', 'B', 'C'};
+        stringExample.printArray(integers);
+        stringExample.printArray(doubles);
+        stringExample.printArray(characters);
     }
 }

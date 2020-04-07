@@ -23,4 +23,12 @@ public class GenericClassExample<T> {
         return "Hello" + name;
     }
 
+    public static <T> void printArray(T[] inputArray) {
+        for (T element : inputArray) {
+            System.out.printf("%s", element);
+            System.out.printf(" ");
+        }
+        System.out.println();
+    }
+
 }
