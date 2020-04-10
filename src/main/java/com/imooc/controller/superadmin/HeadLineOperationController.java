@@ -14,20 +14,26 @@ public class HeadLineOperationController {
 
 
 
-    Result<Boolean> addHeadLine(HttpServletRequest req, HttpServletResponse resp) {
+
+    public Result<Boolean> addHeadLine(HttpServletRequest req, HttpServletResponse resp) {
+        //TODO:参数校验以及请求参数转化
         return headLineService.addHeadLine(new HeadLine());
     }
-    Result<Boolean> removeHeadLine(HttpServletRequest req, HttpServletResponse resp) {
+    public Result<Boolean> removeHeadLine(HttpServletRequest req, HttpServletResponse resp) {
+        //TODO:参数校验以及请求参数转化
         return headLineService.removeHeadLine(1);
     }
-    Result<Boolean> modifyHeadLine(HttpServletRequest req, HttpServletResponse resp){
+    public Result<Boolean> modifyHeadLine(HttpServletRequest req, HttpServletResponse resp){
+        //TODO:参数校验以及请求参数转化
         return headLineService.modifyHeadLine(new HeadLine());
     }
-    Result<HeadLine> queryHeadLineById(HttpServletRequest req, HttpServletResponse resp){
+    public Result<HeadLine> queryHeadLineById(HttpServletRequest req, HttpServletResponse resp){
+        //TODO:参数校验以及请求参数转化
         return headLineService.queryHeadLineById(1);
     }
-    Result<List<HeadLine>> queryHeadLine(HeadLine headLineConfidition, int pageIndex, int pageSize){
-
+    public Result<List<HeadLine>> queryHeadLine(HttpServletRequest req, HttpServletResponse resp){
+        //TODO:参数校验以及请求参数转化
+        return headLineService.queryHeadLine(null, 1, 100);
     }
 
 }

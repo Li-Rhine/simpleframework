@@ -24,7 +24,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
     }
 
     @Override
-    public Result<HeadLine> queryShopCategoryById(int shopCategoryId) {
+    public Result<ShopCategory> queryShopCategoryById(int shopCategoryId) {
         return null;
     }
 
