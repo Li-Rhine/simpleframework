@@ -1,6 +1,6 @@
 package demo.reflect;
 
-public class ReflectTarget {
+public class ReflectTarget extends ReflectTargetOrigin {
     //------构造函数-----
     //(默认的带参数的构造函数)
     ReflectTarget(String str) {
@@ -33,8 +33,22 @@ public class ReflectTarget {
     }
 
 
+    //******** 字段 ************//
+    public String name;
+    protected int index;
+    char type;
+    private String targetInfo;
 
 
+    @Override
+    public String toString() {
+        return "ReflectTarget{" +
+                "name='" + name + '\'' +
+                ", index=" + index +
+                ", type=" + type +
+                ", targetInfo='" + targetInfo + '\'' +
+                '}';
+    }
 
     public static void main(String[] args) throws ClassNotFoundException {
         //第一种方式获取Class对象
