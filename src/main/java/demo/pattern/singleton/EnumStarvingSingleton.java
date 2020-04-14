@@ -1,7 +1,7 @@
 package demo.pattern.singleton;
 
 /**
- * 单例-枚举类型  防止反射攻击
+ * 单例-枚举类型  防止反射攻击和序列化攻击
  */
 public class EnumStarvingSingleton {
 
