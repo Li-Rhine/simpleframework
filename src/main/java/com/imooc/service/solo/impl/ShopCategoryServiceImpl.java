@@ -4,9 +4,11 @@ import com.imooc.entity.bo.HeadLine;
 import com.imooc.entity.bo.ShopCategory;
 import com.imooc.entity.dto.Result;
 import com.imooc.service.solo.ShopCategoryService;
+import org.simpleframework.core.annotation.Service;
 
 import java.util.List;
 
+@Service
 public class ShopCategoryServiceImpl implements ShopCategoryService {
     @Override
     public Result<Boolean> addShopCategory(ShopCategory shopCategory) {
