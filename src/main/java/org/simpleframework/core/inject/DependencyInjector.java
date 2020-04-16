@@ -1,7 +1,8 @@
-package org.simpleframework.core.inject.annotation;
+package org.simpleframework.core.inject;
 
 import lombok.extern.slf4j.Slf4j;
 import org.simpleframework.core.BeanContainer;
+import org.simpleframework.core.inject.annotation.Autowired;
 import org.simpleframework.util.ClassUtil;
 import org.simpleframework.util.ValidationUtil;
 
@@ -45,7 +46,7 @@ public class DependencyInjector {
                     //5、获取这些成员变量的类型在容器里对应的实例
                     Object fieldValue = getFieldInstance(fieldClass, autowiredValue);
                     if (fieldValue == null) {
-                        throw new RuntimeException("unable to inject relevant type, target fieldClass is : "+ fieldClass.getName());
+                        throw new RuntimeException("unable to inject relevant type, target fieldClass is : "+ fieldClass.getName() + "autowiredValue is:" + autowiredValue);
                     }else {
                         //6、通过反射将对应的成员变量实例注入到成员变量所在类的实例里
                         Object targetBean = beanContainer.getBean(clazz);
@@ -93,7 +94,13 @@ public class DependencyInjector {
                     return classSet.iterator().next();
                 }else {
                     //如果多于两个实现类且用户未指定其中一个实现类，则抛出异常
-                    throw new RuntimeException("multi")
+                    throw new RuntimeException("multiple implemented classes for" + fieldClass.getName() + "please set @Autowired's value to pick one");
+                }
+            }else {
+                for (Class<?> clazz: classSet) {
+                    if (autowiredValue.equals(clazz.getSimpleName())) {
+                        return clazz;
+                    }
                 }
             }
         }
